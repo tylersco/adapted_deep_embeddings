@@ -1,0 +1,2 @@
+I downloaded & extracted the data from this webpage:
+https://tiny-imagenet.herokuapp.com/

@@ -102,3 +102,14 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Other
+.DS_Store
+
+.vscode
+
+trained_models/*
+!trained_models/.gitkeep
+
+dataset/*
+!dataset/.gitkeep
