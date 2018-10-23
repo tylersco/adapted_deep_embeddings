@@ -89,25 +89,19 @@ def _softmax(x):
 def _max_pooling(name, x, kernel_size, stride, padding='SAME'):
     return tf.nn.max_pool(x, ksize=_stride(kernel_size), strides=_stride(stride), padding=padding, name=name)
 
-# TODO: Change weight initialization to match paper
 def _conv(name, x, filter_size, in_size, out_size, stride, padding='SAME', bias=True, reuse=None, weight_decay=None):
     with tf.variable_scope(name, reuse=reuse):
-        n = filter_size * filter_size * int(in_size)
         weights = tf.get_variable(
             'conv_weights', [filter_size, filter_size, in_size, out_size],
-            tf.float32, initializer=tf.random_uniform_initializer(minval=-1. / np.sqrt(n), maxval=1. / np.sqrt(n))
+            tf.float32, initializer=tf.initializers.random_normal()
         )
-        # weights = tf.get_variable(
-        #     'conv_weights', [filter_size, filter_size, in_size, out_size],
-        #     tf.float32, initializer=tf.random_normal_initializer(stddev=np.sqrt(2.0 / n))
-        # )
 
         res = tf.nn.conv2d(x, weights, _stride(stride), padding=padding)
 
         if bias:
             biases = tf.get_variable(
                 'conv_biases', [out_size], tf.float32,
-                initializer=tf.zeros_initializer()
+                initializer=tf.initializers.random_normal()
             )
             res += biases
 
@@ -117,16 +111,14 @@ def _conv(name, x, filter_size, in_size, out_size, stride, padding='SAME', bias=
 
     return res
 
-# TODO: Change weight initialization to match paper
 def _fully_connected(name, x, out_size, reuse=None, weight_decay=None):
     with tf.variable_scope(name, reuse=reuse):
-        # NOTE: Factor used in initializer may need to be tuned
         weights = tf.get_variable(
-            'fc_weights', [x.get_shape()[1], out_size],
-            initializer=tf.uniform_unit_scaling_initializer(factor=1.0)
+            'fc_weights', [x.get_shape()[1], out_size], tf.float32,
+            initializer=tf.initializers.random_normal()
         )
         biases = tf.get_variable(
-            'fc_biases', [out_size], initializer=tf.zeros_initializer()
+            'fc_biases', [out_size], tf.float32, initializer=tf.initializers.random_normal()
         )
 
         if weight_decay:

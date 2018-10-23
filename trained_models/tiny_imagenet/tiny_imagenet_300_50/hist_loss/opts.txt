@@ -1,0 +1,18 @@
+-d tiny_imagenet
+-dp /home/tscott/Documents/datasets/tiny_imagenet/tiny-imagenet-200 
+-k 300
+-n 50
+-e 750
+-bs 1024
+-lr 0.005
+-p 100
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/tiny_imagenet/tiny_imagenet_300_50/hist_loss
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/tiny_imagenet/tiny_imagenet_300_50/hist_loss/log.txt
+hist_loss
+--dist cos
+--kappa 1

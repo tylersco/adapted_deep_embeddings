@@ -86,7 +86,7 @@ class MNIST():
 
         x_test_lt5 = self.test_images[self.test_labels < 5]
         y_test_lt5 = self.test_labels[self.test_labels < 5]
-        shuffle = np.random.permutation(len(self.y_test_lt5))
+        shuffle = np.random.permutation(len(y_test_lt5))
         self.x_test_lt5_full, self.y_test_lt5_full = x_test_lt5[shuffle], y_test_lt5[shuffle]
 
         self.x_lt5 = np.concatenate((self.x_train_lt5_full, self.x_test_lt5_full), axis=0)

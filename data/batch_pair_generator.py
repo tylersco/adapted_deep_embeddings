@@ -68,11 +68,12 @@ def generate_batch_pairs(ids, batch_size, examples_per_identity):
         pos_comps, neg_comps = generate_for_batch(batch_ids)
         batch_number+=1
         if len(pos_comps) > 0 and len(neg_comps) > 0:
-            return {'batch_samples':batch_samples,
+            d = {'batch_samples':batch_samples,
                 'batch_ids': batch_ids,
                 'pos_comps':pos_comps,
                 'neg_comps':neg_comps,
                 'batch_idx':batch_number,
                 }
+            yield d
         batch_samples=[]
         batch_ids=[]

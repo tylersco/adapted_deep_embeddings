@@ -62,11 +62,13 @@ def hist_loss(z, pos_comps, n_pos_comps, neg_comps, n_neg_comps):
 def train_batches(X_train, ids, batch_size):
     batch_idx=0
     examples_per_id = int(batch_size / len(np.unique(ids)))
+    if examples_per_id == 1:
+        examples_per_id += 1
     for batch in gen.generate_batch_pairs(ids, batch_size, examples_per_id):
-            feed_dict = {'x':X_train[batch['batch_samples']],
+        feed_dict = {'x':X_train[batch['batch_samples']],
                          'pos_comps':batch['pos_comps'],
                          'neg_comps':batch['neg_comps'],
                          'n_pos_comps':len(batch['pos_comps']),
                          'n_neg_comps':len(batch['neg_comps'])
-            }
-            yield batch['batch_idx'], feed_dict
+        }
+        yield batch['batch_idx'], feed_dict

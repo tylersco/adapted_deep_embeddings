@@ -1,0 +1,16 @@
+-d tiny_imagenet
+-dp /home/tscott/Documents/datasets/tiny_imagenet/tiny-imagenet-200 
+-k 50
+-n 5
+-e 1000
+-bs 1024
+-lr 0.005
+-p 100
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/tiny_imagenet/tiny_imagenet_50_5/baseline
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/tiny_imagenet/tiny_imagenet_50_5/baseline/log.txt
+baseline

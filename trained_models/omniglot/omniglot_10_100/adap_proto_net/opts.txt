@@ -1,0 +1,21 @@
+-d omniglot
+-dp /home/tscott/Documents/datasets/omniglot/data 
+-k 10
+-n 100
+-lr 0.0001
+-p 4000
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/omniglot/omniglot_10_100/adap_proto_net
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/omniglot/omniglot_10_100/adap_proto_net/log.txt
+proto
+--classes_per_episode 100 
+--query_train_per_class 5 
+--training_episodes 10000 
+--evaluation_episodes 250 
+--adaptive 
+--query_batch_size 1
+

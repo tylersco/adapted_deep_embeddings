@@ -1,0 +1,16 @@
+-d isolet
+-dp /home/tscott/Documents/datasets/isolet 
+-k 100 
+-n 10
+-e 750
+-bs 1024 
+-lr 0.005
+-p 50
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/isolet/isolet_100_10/weight_transfer
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/isolet/isolet_100_10/weight_transfer/log.txt
+weight_transfer

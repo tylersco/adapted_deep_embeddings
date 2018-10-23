@@ -1,0 +1,18 @@
+-d omniglot
+-dp /home/tscott/Documents/datasets/omniglot/data 
+-k 10
+-n 1000
+-e 500
+-bs 2048
+-lr 0.005
+-p 70
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/omniglot/omniglot_10_1000/hist_loss
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/omniglot/omniglot_10_1000/hist_loss/log.txt
+hist_loss
+--dist cos
+--kappa 1

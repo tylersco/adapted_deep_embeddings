@@ -1,0 +1,21 @@
+-d tiny_imagenet
+-dp /home/tscott/Documents/datasets/tiny_imagenet/tiny-imagenet-200 
+-k 10
+-n 50
+-lr 0.0001
+-p 6000
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/tiny_imagenet/tiny_imagenet_10_50/adap_proto_net
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/tiny_imagenet/tiny_imagenet_10_50/adap_proto_net/log.txt
+proto
+--classes_per_episode 50
+--query_train_per_class 50 
+--training_episodes 10000 
+--evaluation_episodes 350 
+--adaptive 
+--query_batch_size 1
+

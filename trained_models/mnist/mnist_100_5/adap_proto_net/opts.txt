@@ -1,0 +1,22 @@
+-d mnist
+-dp /home/tscott/Documents/datasets/mnist 
+--t1_train 8000
+--t1_valid 3000
+-k 100
+-n 5
+--t2_test 10000
+-lr 0.001
+-p 2000
+-esr 0.01
+-r 1234
+--replications 1
+-g 0
+-ctl /cpu:0
+-sd /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/mnist/mnist_100_5/adap_proto_net
+-lf /home/tscott/Documents/projects/adapted_deep_embeddings/trained_models/mnist/mnist_100_5/adap_proto_net/log.txt
+proto
+--classes_per_episode 5 
+--query_train_per_class 100 
+--training_episodes 10000 
+--evaluation_episodes 75 
+--adaptive

@@ -108,8 +108,7 @@ venv.bak/
 
 .vscode
 
-trained_models/*
-!trained_models/.gitkeep
-
-dataset/*
-!dataset/.gitkeep
+log.txt
+checkpoint
+model.ckpt*
+replication*/

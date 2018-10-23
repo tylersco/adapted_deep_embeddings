@@ -5,6 +5,9 @@ import numpy as np
 from PIL import Image
 import PIL
 from scipy.misc import imresize
+import logging
+
+logging.getLogger("PIL").setLevel(logging.WARNING)
 
 class Omniglot():
     def __init__(self, path):
