@@ -101,7 +101,7 @@ def _conv(name, x, filter_size, in_size, out_size, stride, padding='SAME', bias=
         if bias:
             biases = tf.get_variable(
                 'conv_biases', [out_size], tf.float32,
-                initializer=tf.initializers.random_normal()
+                initializer=tf.initializers.zeros()
             )
             res += biases
 
@@ -118,7 +118,7 @@ def _fully_connected(name, x, out_size, reuse=None, weight_decay=None):
             initializer=tf.initializers.random_normal()
         )
         biases = tf.get_variable(
-            'fc_biases', [out_size], tf.float32, initializer=tf.initializers.random_normal()
+            'fc_biases', [out_size], tf.float32, initializer=tf.initializers.zeros()
         )
 
         if weight_decay:
