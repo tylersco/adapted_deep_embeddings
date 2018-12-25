@@ -374,7 +374,7 @@ def run(params):
     for rep in range(params['replications']):
         tf.reset_default_graph()
         with tf.Session(config=config) as sess:
-            tf.set_random_seed(initialization_seq[rep])
+            #tf.set_random_seed(initialization_seq[rep])
             np.random.seed(initialization_seq[rep])
             
             model, data = get_model(params)
