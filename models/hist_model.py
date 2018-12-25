@@ -113,7 +113,7 @@ class OmniglotHistModel(HistModel):
         super().__init__(config)
         self.input = tf.placeholder(tf.float32, [None, 784])
         self.batch_norm = partial(tf.layers.batch_normalization,
-            momentum=0.1, epsilon=1e-5, fused=True, center=True, scale=False)
+            momentum=0.9, epsilon=1e-5, fused=True, center=True, scale=False)
         self.prediction
         self.optimize
 
@@ -143,7 +143,7 @@ class TinyImageNetHistModel(HistModel):
         super().__init__(config)
         self.input = tf.placeholder(tf.float32, [None, 64, 64, 3])
         self.batch_norm = partial(tf.layers.batch_normalization,
-            momentum=0.1, epsilon=1e-5, fused=True, center=True, scale=False)
+            momentum=0.9, epsilon=1e-5, fused=True, center=True, scale=False)
         self.prediction
         self.optimize
 

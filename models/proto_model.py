@@ -127,7 +127,7 @@ class OmniglotProtoModel(ProtoModel):
         self.query_reshape = tf.reshape(self.query, shape=[tf.shape(self.query)[0] * tf.shape(self.query)[1], 28, 28, 1])
         self.input = tf.concat([self.support_reshape, self.query_reshape], 0)
         self.batch_norm = partial(tf.layers.batch_normalization,
-            momentum=0.1, epsilon=1e-5, fused=True, center=True, scale=False)
+            momentum=0.9, epsilon=1e-5, fused=True, center=True, scale=False)
         self.prediction
         self.optimize
         self.metrics
@@ -153,7 +153,7 @@ class TinyImageNetProtoModel(ProtoModel):
         self.label = tf.placeholder(tf.int32, [None, None])
         self.query_reshape = tf.reshape(self.query, shape=[tf.shape(self.query)[0] * tf.shape(self.query)[1], 64, 64, 3])
         self.batch_norm = partial(tf.layers.batch_normalization,
-            momentum=0.1, epsilon=1e-5, fused=True, center=True, scale=False)
+            momentum=0.9, epsilon=1e-5, fused=True, center=True, scale=False)
         self.prediction
         self.optimize
         self.metrics

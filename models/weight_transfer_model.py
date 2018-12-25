@@ -121,7 +121,7 @@ class OmniglotWeightTransferModel(WeightTransferModel):
         self.target = tf.placeholder(tf.int32, [None])
         self.is_task1 = tf.placeholder(tf.bool)
         self.batch_norm = partial(tf.layers.batch_normalization,
-            momentum=0.1, epsilon=1e-5, fused=True, center=True, scale=False)
+            momentum=0.9, epsilon=1e-5, fused=True, center=True, scale=False)
         self.prediction
         self.optimize
         self.metrics
@@ -150,7 +150,7 @@ class TinyImageNetWeightTransferModel(WeightTransferModel):
         self.target = tf.placeholder(tf.int32, [None])
         self.is_task1 = tf.placeholder(tf.bool)
         self.batch_norm = partial(tf.layers.batch_normalization,
-            momentum=0.1, epsilon=1e-5, fused=True, center=True, scale=False)
+            momentum=0.9, epsilon=1e-5, fused=True, center=True, scale=False)
         self.prediction
         self.optimize
         self.metrics
