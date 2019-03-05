@@ -39,4 +39,4 @@ Debugging information as well as the results for the experiment will be stored i
 
 Some of the models, specifically with Tiny ImageNet, require large amounts of memory and can run for several weeks (if you are doing 10 replications). I tested these models with an Nvidia GTX 1080 TI graphics card and 64 GB RAM. 
 
-We've conducted further exploration on the role of weight iniitalization on the different methods. See "A_Note_On_Weight_Initialization.pdf" for a short description of the findings.
+We've conducted further exploration on the role of weight initialization on the different methods. See "A_Note_On_Weight_Initialization.pdf" for a short description of the findings.
